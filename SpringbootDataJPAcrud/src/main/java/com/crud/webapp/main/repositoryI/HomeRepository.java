@@ -10,7 +10,7 @@ import com.crud.webapp.main.model.Student;
 @Repository
 public interface HomeRepository extends CrudRepository<Student, Integer> {
 
-	List<Student> findByUsernameAndPassword(String username, String password);
+	public List<Student> findByUsernameAndPassword(String username, String password);
 	
 	//findAllByColumn1AndColumn2 -- camelCase
 }

@@ -1,10 +1,7 @@
 package com.crud.webapp.main.serviceImpl;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-
-import javax.swing.plaf.basic.BasicScrollPaneUI.HSBChangeListener;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,15 +31,17 @@ public class HomeServiceImpl implements HomeService {
 	@Override
 	public void deleteStudent(int rollno) {
 		
-		Optional<Student> id = hr.findById(rollno);
-		Student s = id.get();
-		hr.delete(s);
+		hr.deleteById(rollno);
+//		Optional<Student> id = hr.findById(rollno);
+//		Student s = id.get();
+//		hr.delete(s);
 	}
 
 	@Override
 	public Student editStudent(int rollno) {
-		Optional<Student> id2 = hr.findById(rollno);
-		Student s = id2.get();
+		
+		Optional<Student> id = hr.findById(rollno);
+		Student s = id.get();
 		return s;
 		
 	}
